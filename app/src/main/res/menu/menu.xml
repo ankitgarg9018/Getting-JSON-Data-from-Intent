@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:title="About BMI " android:id="@+id/abmi"></item>
+
+    <item android:title="BMI Chart" android:id="@+id/bmic"></item>
+    <item android:title="About Developer" android:id="@+id/abdev"></item>
+    <item android:title="Exit" android:id="@+id/exit"></item>
+
+</menu>
