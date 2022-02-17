@@ -3,6 +3,8 @@ package com.example.mybmi;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.service.autofill.RegexValidator;
@@ -236,6 +238,29 @@ awesomeValidation.addValidation(this,R.id.et_name,
                 Intent intent3 = new Intent(MainActivity.this,AboutDeveloperActivity.class);
                 startActivity(intent3);
                 return true;
+            case R.id.contus:
+                Intent intent4 = new Intent(MainActivity.this,ContactActivity2.class);
+                startActivity(intent4);
+                return true;
+            case R.id.exit:
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("Do You Want to Exit?")
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                MainActivity.super.onBackPressed();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.cancel();
+                            }
+                        });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -248,6 +273,30 @@ awesomeValidation.addValidation(this,R.id.et_name,
         super.onCreateContextMenu(menu, v, menuInfo);
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.menu, menu);
+    }
+//------------exit method()-------------------//
+    @Override
+    public void onBackPressed() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Do You Want to Exit?")
+                .setCancelable(false)
+               .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                   @Override
+                   public void onClick(DialogInterface dialogInterface, int i) {
+                       MainActivity.super.onBackPressed();
+                   }
+               })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+
     }
 
     @Override
@@ -286,6 +335,8 @@ awesomeValidation.addValidation(this,R.id.et_name,
                 return super.onOptionsItemSelected(item);
         }
     }*/
+
+
     }
 }
 

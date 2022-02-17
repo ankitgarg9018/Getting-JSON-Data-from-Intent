@@ -4,6 +4,7 @@
 
     <item android:title="BMI Chart" android:id="@+id/bmic"></item>
     <item android:title="About Developer" android:id="@+id/abdev"></item>
+    <item android:title="Contact US" android:id="@+id/contus"></item>
     <item android:title="Exit" android:id="@+id/exit"></item>
 
 </menu>
